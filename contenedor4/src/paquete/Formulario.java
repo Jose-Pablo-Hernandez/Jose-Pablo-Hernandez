@@ -10,7 +10,8 @@ package paquete;
  * @author hp
  */
 public class Formulario extends javax.swing.JFrame {
-
+private MantenimientoMaestros ventanaMaestros;
+private MantenimientoAlumnos ventanaAlumnos;
     /**
      * Creates new form Formulario
      */
@@ -28,19 +29,66 @@ public class Formulario extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmenuMantenimimiento_alumnos = new javax.swing.JMenuItem();
+        jmenuMantenimiento_maestros = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jDesktopPane1.setBackground(new java.awt.Color(30, 30, 30));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 332, Short.MAX_VALUE)
         );
+
+        jMenu1.setText("Catalogos");
+
+        jmenuMantenimimiento_alumnos.setText("Mantenimiento alumnos");
+        jmenuMantenimimiento_alumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuMantenimimiento_alumnosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmenuMantenimimiento_alumnos);
+
+        jmenuMantenimiento_maestros.setText("Mantenimiento maestros");
+        jmenuMantenimiento_maestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuMantenimiento_maestrosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmenuMantenimiento_maestros);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Salida");
+
+        jMenuItem2.setText("Salir del sistema");
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseClicked(evt);
+            }
+        });
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,6 +103,26 @@ public class Formulario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmenuMantenimimiento_alumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuMantenimimiento_alumnosActionPerformed
+       ventanaAlumnos = new MantenimientoAlumnos();
+       jDesktopPane1.add(ventanaAlumnos);
+    }//GEN-LAST:event_jmenuMantenimimiento_alumnosActionPerformed
+
+    private void jMenuItem2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseClicked
+    
+    }//GEN-LAST:event_jMenuItem2MouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       dispose();
+      
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jmenuMantenimiento_maestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuMantenimiento_maestrosActionPerformed
+      ventanaMaestros = new MantenimientoMaestros();
+       jDesktopPane1.add(ventanaMaestros);
+       
+    }//GEN-LAST:event_jmenuMantenimiento_maestrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,5 +161,11 @@ public class Formulario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jmenuMantenimiento_maestros;
+    private javax.swing.JMenuItem jmenuMantenimimiento_alumnos;
     // End of variables declaration//GEN-END:variables
 }
